@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.androiddesdecero.viewmodeludemy.ui.DBLDActivity;
 import com.androiddesdecero.viewmodeludemy.ui.DataBindingActivity;
 import com.androiddesdecero.viewmodeludemy.ui.LiveDataActivity;
 import com.androiddesdecero.viewmodeludemy.ui.UserViewModelActivity;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         btDBLABinding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(getApplicationContext(), DBLDActivity.class));
+                startActivity(new Intent(getApplicationContext(), DBLDActivity.class));
             }
         });
     }

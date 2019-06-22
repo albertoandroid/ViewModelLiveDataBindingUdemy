@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name=""
-            type="" />
+            name="viewModel"
+            type="com.androiddesdecero.viewmodeludemy.viewmodel.DBLDViewModel" />
 
     </data>
 
@@ -17,14 +17,17 @@
         tools:context=".ui.DBLDActivity">
 
         <TextView
+            android:text="@{viewModel.user.nombre}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:text="@{viewModel.user.edad}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
+            android:onClick="@{()->viewModel.updateUser()}"
             android:text="Actualizar Usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
