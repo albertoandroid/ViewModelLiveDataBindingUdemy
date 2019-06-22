@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.androiddesdecero.viewmodeludemy.R;
 import com.androiddesdecero.viewmodeludemy.util.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserViewModelActivity extends AppCompatActivity {
@@ -34,6 +35,9 @@ public class UserViewModelActivity extends AppCompatActivity {
     }
 
     private void setUpView(){
+
+        userList = new ArrayList<>();
+
         tvUser = findViewById(R.id.tvUser);
         tvUserViewModel = findViewById(R.id.tvUserViewModel);
 
