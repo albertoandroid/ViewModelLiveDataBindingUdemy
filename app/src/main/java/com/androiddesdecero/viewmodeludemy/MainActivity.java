@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.androiddesdecero.viewmodeludemy.ui.LiveDataActivity;
 import com.androiddesdecero.viewmodeludemy.ui.UserViewModelActivity;
 import com.androiddesdecero.viewmodeludemy.ui.ViewModelActivity;
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btLiveData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(getApplicationContext(), LiveDataActivity.class));
+                startActivity(new Intent(getApplicationContext(), LiveDataActivity.class));
             }
         });
 
