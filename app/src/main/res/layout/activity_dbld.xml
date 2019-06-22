@@ -20,13 +20,15 @@
             android:text="@{viewModel.user.nombre}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:visible="@{viewModel.visible}"/>
+            app:visibility="@{viewModel.visible}"
+            app:size="@{viewModel.size}"/>
 
         <TextView
             android:text="@{viewModel.user.edad}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:visible="@{viewModel.visible}"/>
+            app:visibility="@{viewModel.visible}"
+            app:size="@{viewModel.size}"/>
 
         <Button
             android:onClick="@{()->viewModel.updateUser()}"

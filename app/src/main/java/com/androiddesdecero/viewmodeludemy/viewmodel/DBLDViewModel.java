@@ -10,11 +10,15 @@ public class DBLDViewModel extends ViewModel {
 
     private MutableLiveData<User> user;
     private MutableLiveData<Boolean> visible;
+    private MutableLiveData<Float> size;
 
     public DBLDViewModel(){
         user = new MutableLiveData<>();
         visible = new MutableLiveData<>();
         visible.setValue(true);
+
+        size = new MutableLiveData<>();
+        size.setValue(14f);
     }
 
     public LiveData<User> getUser() {
@@ -30,7 +34,7 @@ public class DBLDViewModel extends ViewModel {
         this.user.setValue(user);
     }
 
-    public MutableLiveData<Boolean> getVisible(){
+    public LiveData<Boolean> getVisible(){
         return visible;
     }
 
@@ -44,5 +48,10 @@ public class DBLDViewModel extends ViewModel {
         }else {
             visible.setValue(true);
         }
+        size.setValue(size.getValue().floatValue()+5l);
+    }
+
+    public LiveData<Float> getSize(){
+        return size;
     }
 }
