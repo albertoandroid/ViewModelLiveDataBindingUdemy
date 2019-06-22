@@ -25,6 +25,8 @@ public class UserViewModelActivity extends AppCompatActivity {
     private TextView tvUser;
     private TextView tvUserViewModel;
 
+    User user;
+
     private List<User> userList;
     private UserViewModel userViewModel;
 
