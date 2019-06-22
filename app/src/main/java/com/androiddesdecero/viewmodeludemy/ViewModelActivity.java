@@ -1,6 +1,7 @@
 package com.androiddesdecero.viewmodeludemy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.androiddesdecero.viewmodeludemy.util.Sumar;
+import com.androiddesdecero.viewmodeludemy.viewmodel.SumarViewModel;
 
 public class ViewModelActivity extends AppCompatActivity {
 
@@ -16,8 +18,7 @@ public class ViewModelActivity extends AppCompatActivity {
     private TextView tvSumarViewModel;
     private Button btSumar;
     private int resultado;
-    //private SumarViewModel sumarViewModel;
-
+    private SumarViewModel sumarViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class ViewModelActivity extends AppCompatActivity {
     }
 
     private void setUpView(){
+        sumarViewModel = ViewModelProviders.of(this).get(SumarViewModel.class);
+
         tvSumar = findViewById(R.id.tvSumar);
         tvSumarViewModel = findViewById(R.id.tvSumarViewModel);
         btSumar = findViewById(R.id.btSumar);
@@ -37,6 +40,9 @@ public class ViewModelActivity extends AppCompatActivity {
             public void onClick(View v) {
                 resultado = Sumar.sumar(resultado);
                 tvSumar.setText("" + resultado);
+
+                sumarViewModel.setResultado(Sumar.sumar(sumarViewModel.getResultado()));
+                tvSumarViewModel.setText(""+ sumarViewModel.getResultado());
             }
         });
     }
