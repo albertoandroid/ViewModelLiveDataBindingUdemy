@@ -1,6 +1,7 @@
 package com.androiddesdecero.viewmodeludemy.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.androiddesdecero.viewmodeludemy.R;
 import com.androiddesdecero.viewmodeludemy.util.User;
+import com.androiddesdecero.viewmodeludemy.viewmodel.UserViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,7 @@ public class UserViewModelActivity extends AppCompatActivity {
     private TextView tvUserViewModel;
 
     private List<User> userList;
-    //private UserViewModel userViewModel;
+    private UserViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class UserViewModelActivity extends AppCompatActivity {
     }
 
     private void setUpView(){
-
+        userViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
         userList = new ArrayList<>();
 
         tvUser = findViewById(R.id.tvUser);
@@ -53,7 +55,7 @@ public class UserViewModelActivity extends AppCompatActivity {
                 user.setNombre(etNombre.getText().toString());
                 userList.add(user);
 
-                //userViewModel.addUser(user);
+                userViewModel.addUser(user);
             }
         });
         btVerUser = findViewById(R.id.btVer);
@@ -66,10 +68,10 @@ public class UserViewModelActivity extends AppCompatActivity {
                 }
                 tvUser.setText(texto);
                 texto = "";
-                //for(User user: userViewModel.getUserList()){
-                //    texto += user.getNombre() + " " + user.getEdad()+"\n";
-                //}
-                //tvUserViewModel.setText(texto);
+                for(User user: userViewModel.getUserList()){
+                    texto += user.getNombre() + " " + user.getEdad()+"\n";
+                }
+                tvUserViewModel.setText(texto);
             }
         });
     }
