@@ -1,4 +1,4 @@
-package com.androiddesdecero.viewmodeludemy;
+package com.androiddesdecero.viewmodeludemy.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.androiddesdecero.viewmodeludemy.R;
 import com.androiddesdecero.viewmodeludemy.util.Sumar;
 import com.androiddesdecero.viewmodeludemy.viewmodel.SumarViewModel;
 
