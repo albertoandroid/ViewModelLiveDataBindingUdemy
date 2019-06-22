@@ -19,12 +19,14 @@
         <TextView
             android:text="@{viewModel.user.nombre}"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:visible="@{viewModel.visible}"/>
 
         <TextView
             android:text="@{viewModel.user.edad}"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:visible="@{viewModel.visible}"/>
 
         <Button
             android:onClick="@{()->viewModel.updateUser()}"
@@ -34,6 +36,7 @@
 
         <Button
             android:text="Visibilidad"
+            android:onClick="@{()->viewModel.changeVisibility()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
